@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">Registro_activity</string>
+    <string name="register_name">Name</string>
+    <string name="register_lastName">Last Name</string>
+    <string name="register_email">Email</string>
+    <string name="register_password">Password</string>
+    <string name="register_registerBtn">Register</string>
+</resources>
