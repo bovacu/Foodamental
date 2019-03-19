@@ -12,4 +12,16 @@
     <string name="inicio_de_sesion">Inicio de sesión</string>
     <string name="registrarse">Registrarse</string>
     <string name="o">ó</string>
+    <string name="Recetas">Recetas</string>
+    <string name="Lista">Lista</string>
+    <string name="Picfood">Picfood</string>
+    <string name="Logros">Logros</string>
+    <string name="Mapa">Mapa</string>
+    <string name="Favoritos">Favoritos</string>
+    <string name="LEGUMBRES">LEGUMBRES</string>
+    <string name="ARROCES">ARROCES</string>
+    <string name="PASTAS">PASTAS</string>
+    <string name="CARNE">CARNE</string>
+    <string name="PESCADO">PESCADO</string>
+    <string name="POSTRES">POSTRES</string>
 </resources>
