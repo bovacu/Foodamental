@@ -1,10 +1,10 @@
 <resources>
     <string name="app_name">Registro_activity</string>
-    <string name="register_name">Name</string>
-    <string name="register_lastName">Last Name</string>
-    <string name="register_email">Email</string>
-    <string name="register_password">Password</string>
-    <string name="register_registerBtn">Register</string>
+    <string name="register_name">Nombre</string>
+    <string name="register_lastName">Apellido</string>
+    <string name="register_email">Correo electronico</string>
+    <string name="register_password">Contraseña</string>
+    <string name="register_registerBtn">Registrarse</string>
     <string name="inicio_sesion">Inicio Sesión</string>
     <string name="correo_electronico">Correo electronico</string>
     <string name="iniciar">Iniciar</string>
@@ -14,7 +14,7 @@
     <string name="o">ó</string>
     <string name="Recetas">Recetas</string>
     <string name="Lista">Lista</string>
-    <string name="Picfood">Picfood</string>
+    <string name="Picfood">PicFood</string>
     <string name="Logros">Logros</string>
     <string name="Mapa">Mapa</string>
     <string name="Favoritos">Favoritos</string>
