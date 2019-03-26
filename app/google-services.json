@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "55662761127",
+    "firebase_url": "https://foodamental-ab3aa.firebaseio.com",
+    "project_id": "foodamental-ab3aa",
+    "storage_bucket": "foodamental-ab3aa.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:55662761127:android:61c7314ad200ef92",
+        "android_client_info": {
+          "package_name": "com.example.bovazque.registro_activity"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "55662761127-20hkbf6r4ebgom9b4hd9v02akq1ubhiv.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.bovazque.registro_activity",
+            "certificate_hash": "670e282a659e056c2993944bc2208cb3cba46a31"
+          }
+        },
+        {
+          "client_id": "55662761127-q5dcl9grm0994ft8j2s7n3vkabqcc1s7.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCD0Q851YZsYCroI1qNVtOYk0HEngmMBdA"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "55662761127-q5dcl9grm0994ft8j2s7n3vkabqcc1s7.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
