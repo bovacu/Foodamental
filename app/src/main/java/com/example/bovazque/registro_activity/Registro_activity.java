@@ -1,6 +1,7 @@
 package com.example.bovazque.registro_activity;
 
 import android.app.ProgressDialog;
+import android.content.Intent;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -12,9 +13,9 @@ import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
-import com.google.firebase.FirebaseApp;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseAuthUserCollisionException;
 
 public class Registro_activity extends AppCompatActivity implements View.OnClickListener {
 
@@ -49,7 +50,6 @@ public class Registro_activity extends AppCompatActivity implements View.OnClick
     }
 
     private void registrarUsuario(){
-
         //Obtenemos el email y la contraseña desde las cajas de texto
         String email = TextEmail.getText().toString().trim();
         String password  = TextPassword.getText().toString().trim();
@@ -79,8 +79,12 @@ public class Registro_activity extends AppCompatActivity implements View.OnClick
 
                             Toast.makeText(Registro_activity.this, "Se ha registrado el usuario con el email: " + TextEmail.getText(), Toast.LENGTH_LONG).show();
                         } else {
-
-                            Toast.makeText(Registro_activity.this, "No se pudo registrar el usuario ", Toast.LENGTH_LONG).show();
+                            if (task.getException() instanceof FirebaseAuthUserCollisionException) {//si se presenta una colisión
+                                Toast.makeText(Registro_activity.this, "Ese usuario ya existe ", Toast.LENGTH_SHORT).show();
+                                inicioSesion();
+                            } else {
+                                Toast.makeText(Registro_activity.this, "No se pudo registrar el usuario ", Toast.LENGTH_LONG).show();
+                            }
                         }
                         progressDialog.dismiss();
                     }
@@ -91,5 +95,10 @@ public class Registro_activity extends AppCompatActivity implements View.OnClick
     public void onClick(View view) {
         //Invocamos al método:
         registrarUsuario();
+    }
+    private void inicioSesion(){
+        Intent intent = new Intent(this, inicioSesion_activity.class);
+        //intent.putExtra(EXTRA_MESSAGE, message);
+        startActivity(intent);
     }
 }
