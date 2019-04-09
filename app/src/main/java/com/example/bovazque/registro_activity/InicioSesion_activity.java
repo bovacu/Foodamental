@@ -17,7 +17,7 @@ import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseAuthUserCollisionException;
 
-public class inicioSesion_activity extends AppCompatActivity  implements View.OnClickListener{
+public class InicioSesion_activity extends AppCompatActivity  implements View.OnClickListener{
 
 
     //defining view objects
@@ -39,8 +39,8 @@ public class inicioSesion_activity extends AppCompatActivity  implements View.On
         firebaseAuth = FirebaseAuth.getInstance();
 
         //Referenciamos los views
-        TextEmail = (EditText) findViewById(R.id.email_et);
-        TextPassword = (EditText) findViewById(R.id.pasword_et);
+        TextEmail = (EditText) findViewById(R.id.correo);
+        TextPassword = (EditText) findViewById(R.id.contrasena);
 
         btnLogin = (Button) findViewById(R.id.iniciobtn);
 
@@ -77,14 +77,14 @@ public class inicioSesion_activity extends AppCompatActivity  implements View.On
                         if (task.isSuccessful()) {
                             int pos = email.indexOf("@");
                             String user = email.substring(0, pos);
-                            Toast.makeText(inicioSesion_activity.this, "Bienvenido: " + TextEmail.getText(), Toast.LENGTH_LONG).show();
-                            Intent intencion = new Intent(getApplication(), principal_activity.class);
+                            Toast.makeText(InicioSesion_activity.this, "Bienvenido: " + TextEmail.getText(), Toast.LENGTH_LONG).show();
+                            Intent intencion = new Intent(getApplication(), Principal_activity.class);
                             startActivity(intencion);
                         } else {
                             if (task.getException() instanceof FirebaseAuthUserCollisionException) {//si se presenta una colisión
-                                Toast.makeText(inicioSesion_activity.this, "Ese usuario ya existe ", Toast.LENGTH_SHORT).show();
+                                Toast.makeText(InicioSesion_activity.this, "Ese usuario ya existe ", Toast.LENGTH_SHORT).show();
                             } else {
-                                Toast.makeText(inicioSesion_activity.this, "No se pudo registrar el usuario ", Toast.LENGTH_LONG).show();
+                                Toast.makeText(InicioSesion_activity.this, "No se pudo registrar el usuario ", Toast.LENGTH_LONG).show();
                             }
                         }
                         progressDialog.dismiss();

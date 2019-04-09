@@ -5,8 +5,6 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 
-import com.google.firebase.FirebaseApp;
-
 public class Inicio_activity extends AppCompatActivity {
 
     @Override
@@ -17,7 +15,7 @@ public class Inicio_activity extends AppCompatActivity {
     }
 
     public void goToInicioSesion(View view) {
-        Intent intent = new Intent(this, inicioSesion_activity.class);
+        Intent intent = new Intent(this, InicioSesion_activity.class);
         //intent.putExtra(EXTRA_MESSAGE, message);
         startActivity(intent);
 

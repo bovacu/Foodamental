@@ -24,4 +24,11 @@
     <string name="CARNE">CARNE</string>
     <string name="PESCADO">PESCADO</string>
     <string name="POSTRES">POSTRES</string>
+    <string name="nombre">Nombre</string>
+    <string name="apellidos">Apellidos</string>
+    <string name="contrase_a">Contraseña</string>
+    <string name="correo_electr_nico">Correo Electrónico</string>
+    <string name="pais">Pais</string>
+    <string name="telefono">Teléfono</string>
+    <string name="foto">Foto</string>
 </resources>

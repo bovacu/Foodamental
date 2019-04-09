@@ -97,7 +97,7 @@ public class Registro_activity extends AppCompatActivity implements View.OnClick
         registrarUsuario();
     }
     private void inicioSesion(){
-        Intent intent = new Intent(this, inicioSesion_activity.class);
+        Intent intent = new Intent(this, InicioSesion_activity.class);
         //intent.putExtra(EXTRA_MESSAGE, message);
         startActivity(intent);
     }
