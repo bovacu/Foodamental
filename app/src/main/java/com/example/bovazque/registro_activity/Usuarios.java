@@ -8,6 +8,7 @@ public class Usuarios {
     private String telefono;
 
     public Usuarios(String claseid, String nombre, String apellido, String pais, String telefono) {
+
         this.claseid = claseid;
         this.nombre = nombre;
         this.apellido = apellido;
