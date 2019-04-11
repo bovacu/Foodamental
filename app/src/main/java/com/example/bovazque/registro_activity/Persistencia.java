@@ -16,11 +16,11 @@ public class Persistencia {
         return true;
     }
 
-    public static boolean iniciarSesion(Usuario usuario) {
-        return true;
-    }
+ //   public static boolean iniciarSesion(Usuario usuario) {
+  //      return true;
+  //  }
 
-    public static Usuario getUsuario(String nombre){
-        return null;
-    }
+  //  public static Usuario getUsuario(String nombre){
+   //     return null;
+  //  }
 }

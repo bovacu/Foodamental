@@ -31,4 +31,6 @@
     <string name="pais">Pais</string>
     <string name="telefono">Teléfono</string>
     <string name="foto">Foto</string>
+    <string name="spinnerCountry">País</string>
+    <string name="spinnerTxt">País</string>
 </resources>
