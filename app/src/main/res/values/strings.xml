@@ -31,4 +31,6 @@
     <string name="pais">Pais</string>
     <string name="telefono">Teléfono</string>
     <string name="foto">Foto</string>
+    <string name="quitar">QUITAR</string>
+    <string name="anadir">Añadir</string>
 </resources>
