@@ -15,7 +15,7 @@ public class Inicio_activity extends AppCompatActivity {
     }
 
     public void goToInicioSesion(View view) {
-        Intent intent = new Intent(this, InicioSesion_activity.class);
+        Intent intent = new Intent(this, Principal_activity.class);
         //intent.putExtra(EXTRA_MESSAGE, message);
         startActivity(intent);
 

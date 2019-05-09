@@ -81,7 +81,7 @@ public class Registro_activity extends AppCompatActivity implements View.OnClick
             Toast.makeText(this,"Falta ingresar la contraseña",Toast.LENGTH_LONG).show();
             return;
         }
-        boolean correcto = this.registrarClase();
+        boolean correcto = this.registrarClase(email);
         if(correcto){
             progressDialog.setMessage("Realizando registro en linea...");
             progressDialog.show();
@@ -93,7 +93,6 @@ public class Registro_activity extends AppCompatActivity implements View.OnClick
                     public void onComplete(@NonNull Task<AuthResult> task) {
                         //checking if success
                             if (task.isSuccessful()) {
-
                               Toast.makeText(Registro_activity.this, "Se ha registrado el usuario con el email: " + TextEmail.getText(), Toast.LENGTH_LONG).show();
                             } else {
                                 if (task.getException() instanceof FirebaseAuthUserCollisionException) {//si se presenta una colisión
@@ -110,17 +109,12 @@ public class Registro_activity extends AppCompatActivity implements View.OnClick
         }
 
     }
-    public boolean registrarClase(){
+    public boolean registrarClase(String email){
         boolean campos = false;
-        String claseid;
-        String nombre = TextName.getText().toString();
-        String apellido =   TextApellido.getText().toString();
-        String pais = TextPaís.getSelectedItem().toString();
-        String telefono =  TextTelefono.getText().toString();
-        if(!TextUtils.isEmpty(nombre) && !TextUtils.isEmpty(apellido) && !TextUtils.isEmpty(telefono)){
-            claseid = mDatabase.push().getKey();
-            Usuarios usu =  new Usuarios(claseid, nombre, apellido, pais, telefono);
-            mDatabase.child("Usuario").child(claseid).setValue(usu);
+        if(!TextUtils.isEmpty(email)){
+            String[] s = email.split("@");
+            Alimento a  = new Alimento("aji amarillo", 1);
+            mDatabase.child("Usuarios").child(s[0]).child("ListaCompra").child("falsi").setValue("-1");
             campos = true;
         }
         return campos;
