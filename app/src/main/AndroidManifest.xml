@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.bovazque.registro_activity">
+
     <uses-permission android:name="android.permission.INTERNET" />
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -9,14 +11,19 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".Recetas_activity"></activity>
-        <activity android:name=".Principal_activity" />
-        <activity android:name=".Inicio_activity">
+        <activity android:name=".RecetasPorIngredientes"></activity>
+        <activity android:name=".TipoBusquedaReceta" />
+        <activity android:name=".RecetasEncontradas_activity" />
+        <activity android:name=".RecetasPorCategoria" />
+        <activity android:name=".Principal_activity" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+        </activity>
+        <activity android:name=".Inicio_activity">
+
         </activity>
         <activity android:name=".InicioSesion_activity" />
         <activity android:name=".Registro_activity" />

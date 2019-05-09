@@ -23,6 +23,30 @@
           }
         },
         {
+          "client_id": "55662761127-mhr4sa1eg0mfc61ed3tvsus899ia8mud.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.bovazque.registro_activity",
+            "certificate_hash": "5346567e60345e50291d884d38a9a941403778aa"
+          }
+        },
+        {
+          "client_id": "55662761127-3htpofflfaqlmb152af9349cmd50r6pe.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.bovazque.registro_activity",
+            "certificate_hash": "bfcc355a4356ec83176580c4ba72930609226aa0"
+          }
+        },
+        {
+          "client_id": "55662761127-m7opr4jnde9h0vjrf96j42famspar574.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.bovazque.registro_activity",
+            "certificate_hash": "e5c4f2c4ed224b78cb0725c0f69309f91d8611cb"
+          }
+        },
+        {
           "client_id": "55662761127-q5dcl9grm0994ft8j2s7n3vkabqcc1s7.apps.googleusercontent.com",
           "client_type": 3
         }
