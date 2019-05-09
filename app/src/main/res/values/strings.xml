@@ -31,22 +31,4 @@
     <string name="pais">Pais</string>
     <string name="telefono">Teléfono</string>
     <string name="foto">Foto</string>
-    <string name="title_activity_recetas_encontradas_activity">RecetasEncontradas_activity</string>
-    <string name="title">Recetas encontradas</string>
-    <string name="por_ingredientes">Por ingredientes</string>
-    <string name="por_categoria">Por Categoria</string>
-    <string-array name="listaCategorias">
-        <item>Arroz</item>
-        <item>Bebida</item>
-        <item>Carne</item>
-        <item>Legumbre</item>
-        <item>Marisco</item>
-        <item>Pasta</item>
-        <item>Pescado</item>
-        <item>Pizza</item>
-        <item>Reposteria</item>
-        <item>Salsa</item>
-        <item>Sopa</item>
-        <item>Verdura</item>
-    </string-array>
 </resources>

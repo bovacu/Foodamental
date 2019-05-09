@@ -9,6 +9,7 @@ import android.text.TextUtils;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Spinner;
 import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnCompleteListener;
@@ -16,11 +17,17 @@ import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseAuthUserCollisionException;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 
 public class Registro_activity extends AppCompatActivity implements View.OnClickListener {
 
     //defining view objects
     private EditText TextEmail;
+    private EditText TextName;
+    private EditText TextApellido;
+    private Spinner TextPaís;
+    private EditText TextTelefono;
     private EditText TextPassword;
     private Button btnRegistrar;
     private ProgressDialog progressDialog;
@@ -28,19 +35,29 @@ public class Registro_activity extends AppCompatActivity implements View.OnClick
 
     //Declaramos un objeto firebaseAuth
     private FirebaseAuth firebaseAuth;
+    private DatabaseReference mDatabase;
+// ...
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_registro_activity);
 
+        mDatabase = FirebaseDatabase.getInstance().getReference("Usuario");
         //inicializamos el objeto firebaseAuth
         firebaseAuth = FirebaseAuth.getInstance();
 
         //Referenciamos los views
         TextEmail = (EditText) findViewById(R.id.editTextEmail);
         TextPassword = (EditText) findViewById(R.id.editText);
-
+        //BD---------------------------------------------------
+        TextName =(EditText) findViewById(R.id.editTextName);
+        TextApellido =(EditText) findViewById(R.id.editTextLastName);
+        TextPaís =(Spinner) findViewById(R.id.spinCountry);
+        TextTelefono =(EditText) findViewById(R.id.editTextPhone);
+                //-----------------------------------------------------
         btnRegistrar = (Button) findViewById(R.id.register_btn);
 
         progressDialog = new ProgressDialog(this);
@@ -64,34 +81,50 @@ public class Registro_activity extends AppCompatActivity implements View.OnClick
             Toast.makeText(this,"Falta ingresar la contraseña",Toast.LENGTH_LONG).show();
             return;
         }
+        boolean correcto = this.registrarClase();
+        if(correcto){
+            progressDialog.setMessage("Realizando registro en linea...");
+            progressDialog.show();
 
-
-        progressDialog.setMessage("Realizando registro en linea...");
-        progressDialog.show();
-
-        //creating a new user
-        Task<AuthResult>  authResultTask = firebaseAuth.createUserWithEmailAndPassword(email, password)
-                .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
+            //creating a new user
+            Task<AuthResult>  authResultTask = firebaseAuth.createUserWithEmailAndPassword(email, password)
+                    .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
 
                     public void onComplete(@NonNull Task<AuthResult> task) {
                         //checking if success
-                        if (task.isSuccessful()) {
+                            if (task.isSuccessful()) {
 
-                            Toast.makeText(Registro_activity.this, "Se ha registrado el usuario con el email: " + TextEmail.getText(), Toast.LENGTH_LONG).show();
-                        } else {
-                            if (task.getException() instanceof FirebaseAuthUserCollisionException) {//si se presenta una colisión
-                                Toast.makeText(Registro_activity.this, "Ese usuario ya existe ", Toast.LENGTH_SHORT).show();
-                                inicioSesion();
+                              Toast.makeText(Registro_activity.this, "Se ha registrado el usuario con el email: " + TextEmail.getText(), Toast.LENGTH_LONG).show();
                             } else {
-                                Toast.makeText(Registro_activity.this, "No se pudo registrar el usuario ", Toast.LENGTH_LONG).show();
+                                if (task.getException() instanceof FirebaseAuthUserCollisionException) {//si se presenta una colisión
+                                    Toast.makeText(Registro_activity.this, "Ese usuario ya existe ", Toast.LENGTH_SHORT).show();
+                                    inicioSesion();
+                                } else {
+                                    Toast.makeText(Registro_activity.this, "No se pudo registrar el usuario ", Toast.LENGTH_LONG).show();
+                                }
                             }
+                            progressDialog.dismiss();
                         }
-                        progressDialog.dismiss();
-                    }
-                });
+                });}else{
+            Toast.makeText(this,"Debes rellenar todos los campos", Toast.LENGTH_LONG).show();
+        }
 
     }
-
+    public boolean registrarClase(){
+        boolean campos = false;
+        String claseid;
+        String nombre = TextName.getText().toString();
+        String apellido =   TextApellido.getText().toString();
+        String pais = TextPaís.getSelectedItem().toString();
+        String telefono =  TextTelefono.getText().toString();
+        if(!TextUtils.isEmpty(nombre) && !TextUtils.isEmpty(apellido) && !TextUtils.isEmpty(telefono)){
+            claseid = mDatabase.push().getKey();
+            Usuarios usu =  new Usuarios(claseid, nombre, apellido, pais, telefono);
+            mDatabase.child("Usuario").child(claseid).setValue(usu);
+            campos = true;
+        }
+        return campos;
+    }
     public void onClick(View view) {
         //Invocamos al método:
         registrarUsuario();
