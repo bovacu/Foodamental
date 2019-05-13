@@ -17,7 +17,7 @@ tools:context=".Registro_activity">
         app:layout_constraintHorizontal_bias="0.4"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="1.0">
+        app:layout_constraintVertical_bias="0.0">
 
     </LinearLayout>
 
@@ -90,24 +90,23 @@ tools:context=".Registro_activity">
     <EditText
         android:id="@+id/TextPassword"
         android:layout_width="361dp"
-        android:layout_height="52dp"
+        android:layout_height="53dp"
         android:layout_marginStart="8dp"
         android:layout_marginLeft="8dp"
         android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
         android:layout_marginRight="8dp"
-        android:layout_marginBottom="232dp"
+        android:layout_marginBottom="8dp"
         android:background="@drawable/round_edittext"
         android:ems="10"
         android:gravity="center"
         android:hint="@string/contrasena"
         android:inputType="textPassword"
-        app:layout_constraintBottom_toBottomOf="@+id/linearLayout2"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.529"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextEmail"
-        app:layout_constraintVertical_bias="0.059" />
+        app:layout_constraintTop_toBottomOf="@+id/TextEmail"
+        app:layout_constraintVertical_bias="0.053" />
 
     <EditText
         android:id="@+id/TextEmail"
@@ -129,7 +128,7 @@ tools:context=".Registro_activity">
         app:layout_constraintHorizontal_bias="0.529"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/spinCountry"
-        app:layout_constraintVertical_bias="0.111" />
+        app:layout_constraintVertical_bias="0.072" />
 
     <ImageButton
         android:id="@+id/register_btn"
