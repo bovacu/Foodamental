@@ -19,11 +19,6 @@ public class Principal_activity extends AppCompatActivity {
         startActivity(intencion);
     }
 
-    public void goToVerReceta(View view) {
-        Intent intent = new Intent(this, VerReceta_activity.class);
-        startActivity(intent);
-    }
-
     public void goToListaCompra(View view) {
         Intent intencion = new Intent(this, Lista_activity.class);
         startActivity(intencion);
