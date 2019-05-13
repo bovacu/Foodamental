@@ -16,14 +16,14 @@
         <activity android:name=".RecetasEncontradas_activity" />
         <activity android:name=".RecetasPorCategoria" />
         <activity android:name=".Principal_activity" >
-
-        </activity>
-        <activity android:name=".Inicio_activity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+        </activity>
+        <activity android:name=".Inicio_activity">
+
         </activity>
         <activity android:name=".InicioSesion_activity" />
         <activity android:name=".Registro_activity" />
