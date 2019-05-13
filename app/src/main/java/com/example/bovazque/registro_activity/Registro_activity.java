@@ -9,6 +9,7 @@ import android.text.TextUtils;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageButton;
 import android.widget.Spinner;
 import android.widget.Toast;
 
@@ -20,7 +21,7 @@ import com.google.firebase.auth.FirebaseAuthUserCollisionException;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
-public class Registro_activity extends AppCompatActivity implements View.OnClickListener {
+public class Registro_activity extends AppCompatActivity implements View.OnClickListener{
 
     //defining view objects
     private EditText TextEmail;
@@ -29,7 +30,7 @@ public class Registro_activity extends AppCompatActivity implements View.OnClick
     private Spinner TextPaís;
     private EditText TextTelefono;
     private EditText TextPassword;
-    private Button btnRegistrar;
+    private ImageButton btnRegistrar;
     private ProgressDialog progressDialog;
 
 
@@ -50,20 +51,23 @@ public class Registro_activity extends AppCompatActivity implements View.OnClick
         firebaseAuth = FirebaseAuth.getInstance();
 
         //Referenciamos los views
-        TextEmail = (EditText) findViewById(R.id.editTextEmail);
-        TextPassword = (EditText) findViewById(R.id.editText);
+        TextEmail = (EditText) findViewById(R.id.TextEmail);
+        TextPassword = (EditText) findViewById(R.id.TextPassword);
         //BD---------------------------------------------------
         TextName =(EditText) findViewById(R.id.editTextName);
         TextApellido =(EditText) findViewById(R.id.editTextLastName);
         TextPaís =(Spinner) findViewById(R.id.spinCountry);
-        TextTelefono =(EditText) findViewById(R.id.editTextPhone);
                 //-----------------------------------------------------
-        btnRegistrar = (Button) findViewById(R.id.register_btn);
+
+        progressDialog = new ProgressDialog(this);
+        btnRegistrar = (ImageButton) findViewById(R.id.register_btn);
 
         progressDialog = new ProgressDialog(this);
 
         //attaching listener to button
         btnRegistrar.setOnClickListener(this);
+        //attaching listener to button
+
     }
 
     private void registrarUsuario(){
@@ -72,12 +76,12 @@ public class Registro_activity extends AppCompatActivity implements View.OnClick
         String password  = TextPassword.getText().toString().trim();
 
         //Verificamos que las cajas de texto no esten vacías
-        if(TextUtils.isEmpty(email)){
+        if(TextUtils.isEmpty(email) || email == null){
             Toast.makeText(this,"Se debe ingresar un email",Toast.LENGTH_LONG).show();
             return;
         }
 
-        if(TextUtils.isEmpty(password)){
+        if(TextUtils.isEmpty(password) || password == null){
             Toast.makeText(this,"Falta ingresar la contraseña",Toast.LENGTH_LONG).show();
             return;
         }
@@ -128,4 +132,10 @@ public class Registro_activity extends AppCompatActivity implements View.OnClick
         //intent.putExtra(EXTRA_MESSAGE, message);
         startActivity(intent);
     }
+
+    public void onClickInicioSesion(View view){
+        startActivity(new Intent(this, InicioSesion_activity.class));
+        overridePendingTransition(R.anim.fade, R.anim.hold);
+    }
+
 }

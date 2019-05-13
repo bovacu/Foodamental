@@ -1,11 +1,47 @@
 <?xml version="1.0" encoding="utf-8"?>
 <android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".Registro_activity"
-    tools:layout_editor_absoluteY="81dp">
+xmlns:app="http://schemas.android.com/apk/res-auto"
+xmlns:tools="http://schemas.android.com/tools"
+android:layout_width="match_parent"
+android:layout_height="match_parent"
+tools:context=".Registro_activity">
+
+    <LinearLayout
+        android:id="@+id/linearLayout2"
+        android:layout_width="406dp"
+        android:layout_height="match_parent"
+        android:background="@drawable/fondo_inicial"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.4"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0">
+
+    </LinearLayout>
+
+    <Spinner
+        android:id="@+id/spinCountry"
+        android:layout_width="361dp"
+        android:layout_height="52dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginBottom="208dp"
+        android:background="@drawable/round_edittext"
+        android:ems="10"
+        android:entries="@array/spinnerItems"
+        android:gravity="center"
+        android:hint="@string/nombre"
+        android:textAlignment="center"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editTextLastName"
+        app:layout_constraintVertical_bias="0.073" />
 
     <EditText
         android:id="@+id/editTextName"
@@ -17,15 +53,17 @@
         android:layout_marginEnd="8dp"
         android:layout_marginRight="8dp"
         android:layout_marginBottom="8dp"
+
+        android:background="@drawable/round_edittext"
         android:ems="10"
+        android:gravity="center"
         android:hint="@string/nombre"
-        android:inputType="textPersonName"
-        android:visibility="visible"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.529"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.301" />
+        app:layout_constraintVertical_bias="0.209" />
 
     <EditText
         android:id="@+id/editTextLastName"
@@ -36,56 +74,21 @@
         android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
         android:layout_marginRight="8dp"
-        android:layout_marginBottom="8dp"
+        android:layout_marginBottom="272dp"
+        android:background="@drawable/round_edittext"
         android:ems="10"
+        android:gravity="center"
         android:hint="@string/apellidos"
-        android:inputType="textPersonName"
-        android:visibility="visible"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.402" />
+        app:layout_constraintHorizontal_bias="0.529"
 
-    <ImageButton
-        android:id="@+id/imageButton"
-        android:layout_width="122dp"
-        android:layout_height="116dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginLeft="8dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginRight="8dp"
-        android:layout_marginBottom="8dp"
-        android:contentDescription="@string/foto"
-        android:visibility="visible"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.058"
-        tools:srcCompat="@tools:sample/avatars" />
-
-    <Button
-        android:id="@+id/register_btn"
-        android:layout_width="137dp"
-        android:layout_height="52dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginLeft="8dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginRight="8dp"
-        android:layout_marginBottom="8dp"
-        android:text="@string/register_registerBtn"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.987" />
+        app:layout_constraintTop_toBottomOf="@+id/editTextName"
+        app:layout_constraintVertical_bias="0.07" />
 
     <EditText
-        android:id="@+id/editText"
+        android:id="@+id/TextPassword"
         android:layout_width="361dp"
         android:layout_height="52dp"
         android:layout_marginStart="8dp"
@@ -93,18 +96,21 @@
         android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
         android:layout_marginRight="8dp"
-        android:layout_marginBottom="8dp"
+        android:layout_marginBottom="232dp"
+        android:background="@drawable/round_edittext"
         android:ems="10"
-        android:hint="@string/contrase_a"
+        android:gravity="center"
+        android:hint="@string/contrasena"
         android:inputType="textPassword"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintBottom_toBottomOf="@+id/linearLayout2"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.529"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.603" />
+        app:layout_constraintTop_toBottomOf="@+id/editTextEmail"
+        app:layout_constraintVertical_bias="0.059" />
 
     <EditText
-        android:id="@+id/editTextEmail"
+        android:id="@+id/TextEmail"
         android:layout_width="361dp"
         android:layout_height="52dp"
         android:layout_marginStart="8dp"
@@ -112,18 +118,21 @@
         android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
         android:layout_marginRight="8dp"
-        android:layout_marginBottom="8dp"
+        android:layout_marginBottom="144dp"
+        android:background="@drawable/round_edittext"
         android:ems="10"
+        android:gravity="center"
         android:hint="@string/correo_electronico"
         android:inputType="textEmailAddress"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.529"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.499" />
+        app:layout_constraintTop_toBottomOf="@+id/spinCountry"
+        app:layout_constraintVertical_bias="0.111" />
 
-    <EditText
-        android:id="@+id/editTextPhone"
+    <ImageButton
+        android:id="@+id/register_btn"
         android:layout_width="361dp"
         android:layout_height="52dp"
         android:layout_marginStart="8dp"
@@ -131,53 +140,39 @@
         android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
         android:layout_marginRight="8dp"
-        android:layout_marginBottom="8dp"
-        android:ems="10"
-        android:hint="@string/telefono"
-        android:inputType="phone"
+        android:layout_marginBottom="84dp"
+        android:adjustViewBounds="true"
+        android:background="@color/white"
+        android:cropToPadding="true"
+        android:scaleType="fitCenter"
+        app:layout_constraintBottom_toBottomOf="@+id/linearLayout2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.529"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/TextPassword"
+        app:layout_constraintVertical_bias="0.885"
+        app:srcCompat="@drawable/boton_empezar" />
+
+    <ImageButton
+        android:id="@+id/buttonIni"
+        android:onClick="onClickInicioSesion"
+        app:srcCompat="@drawable/registro"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.782" />
-
-    <Spinner
-        android:id="@+id/spinCountry"
-        android:layout_width="271dp"
-        android:layout_height="38dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginLeft="8dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="28dp"
-        android:layout_marginRight="28dp"
-        android:layout_marginBottom="8dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.957"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.692"
-        android:entries="@array/spinnerItems"
-        />
-
-    <TextView
-        android:id="@+id/textView3"
-        android:layout_width="62dp"
-        android:layout_height="32dp"
+        android:layout_width="361dp"
+        android:layout_height="52dp"
         android:layout_marginStart="8dp"
         android:layout_marginLeft="8dp"
         android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
         android:layout_marginRight="8dp"
-        android:layout_marginBottom="8dp"
-        android:text="@string/spinnerTxt"
-        android:textSize="20sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/spinCountry"
-        app:layout_constraintHorizontal_bias="0.607"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.69"
-        tools:text="@string/spinnerTxt" />
+        android:background="@color/white"
+        android:scaleType="fitCenter"
+        app:layout_constraintVertical_bias="0.074"
+        app:layout_constraintHorizontal_bias="0.529"
+        />
+
 
 </android.support.constraint.ConstraintLayout>
