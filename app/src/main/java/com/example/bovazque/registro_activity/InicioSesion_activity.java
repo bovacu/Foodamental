@@ -17,7 +17,7 @@ import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseAuthUserCollisionException;
 
-public class InicioSesion_activity extends AppCompatActivity  implements View.OnClickListener{
+public class InicioSesion_activity extends AppCompatActivity {
 
 
     //defining view objects
@@ -39,16 +39,13 @@ public class InicioSesion_activity extends AppCompatActivity  implements View.On
         firebaseAuth = FirebaseAuth.getInstance();
 
         //Referenciamos los views
-        TextEmail = (EditText) findViewById(R.id.correo);
-        TextPassword = (EditText) findViewById(R.id.contrasena);
-
-        btnLogin = (Button) findViewById(R.id.iniciobtn);
+        TextEmail = (EditText) findViewById(R.id.editTextEmail);
+        TextPassword = (EditText) findViewById(R.id.editTextPsw);
 
         progressDialog = new ProgressDialog(this);
 
-        //attaching listener to button
-        btnLogin.setOnClickListener(this);
     }
+
     private void loguearUsuario() {
         //Obtenemos el email y la contraseña desde las cajas de texto
         final String email = TextEmail.getText().toString().trim();
@@ -92,8 +89,14 @@ public class InicioSesion_activity extends AppCompatActivity  implements View.On
                 });
     }
 
-    @Override
-    public void onClick(View view) {
+
+    public void onClickEntrar(View view) {
         loguearUsuario();
     }
+
+    public void onClickRegistrarse(View view) {
+        startActivity(new Intent(this, Registro_activity.class));
+        overridePendingTransition(R.anim.fade, R.anim.hold);
+    }
+
 }

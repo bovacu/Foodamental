@@ -9,6 +9,7 @@ import android.text.TextUtils;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageButton;
 import android.widget.Spinner;
 import android.widget.Toast;
 
@@ -20,7 +21,7 @@ import com.google.firebase.auth.FirebaseAuthUserCollisionException;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
-public class Registro_activity extends AppCompatActivity implements View.OnClickListener {
+public class Registro_activity extends AppCompatActivity implements View.OnClickListener{
 
     //defining view objects
     private EditText TextEmail;
@@ -29,7 +30,7 @@ public class Registro_activity extends AppCompatActivity implements View.OnClick
     private Spinner TextPaís;
     private EditText TextTelefono;
     private EditText TextPassword;
-    private Button btnRegistrar;
+    private ImageButton btnRegistrar;
     private ProgressDialog progressDialog;
 
 
@@ -50,20 +51,23 @@ public class Registro_activity extends AppCompatActivity implements View.OnClick
         firebaseAuth = FirebaseAuth.getInstance();
 
         //Referenciamos los views
-        TextEmail = (EditText) findViewById(R.id.editTextEmail);
-        TextPassword = (EditText) findViewById(R.id.editText);
+        TextEmail = (EditText) findViewById(R.id.TextEmail);
+        TextPassword = (EditText) findViewById(R.id.TextPassword);
         //BD---------------------------------------------------
         TextName =(EditText) findViewById(R.id.editTextName);
         TextApellido =(EditText) findViewById(R.id.editTextLastName);
         TextPaís =(Spinner) findViewById(R.id.spinCountry);
-        TextTelefono =(EditText) findViewById(R.id.editTextPhone);
                 //-----------------------------------------------------
-        btnRegistrar = (Button) findViewById(R.id.register_btn);
+
+        progressDialog = new ProgressDialog(this);
+        btnRegistrar = (ImageButton) findViewById(R.id.register_btn);
 
         progressDialog = new ProgressDialog(this);
 
         //attaching listener to button
         btnRegistrar.setOnClickListener(this);
+        //attaching listener to button
+
     }
 
     private void registrarUsuario(){
@@ -72,16 +76,16 @@ public class Registro_activity extends AppCompatActivity implements View.OnClick
         String password  = TextPassword.getText().toString().trim();
 
         //Verificamos que las cajas de texto no esten vacías
-        if(TextUtils.isEmpty(email)){
+        if(TextUtils.isEmpty(email) || email == null){
             Toast.makeText(this,"Se debe ingresar un email",Toast.LENGTH_LONG).show();
             return;
         }
 
-        if(TextUtils.isEmpty(password)){
+        if(TextUtils.isEmpty(password) || password == null){
             Toast.makeText(this,"Falta ingresar la contraseña",Toast.LENGTH_LONG).show();
             return;
         }
-        boolean correcto = this.registrarClase();
+        boolean correcto = this.registrarClase(email);
         if(correcto){
             progressDialog.setMessage("Realizando registro en linea...");
             progressDialog.show();
@@ -93,7 +97,6 @@ public class Registro_activity extends AppCompatActivity implements View.OnClick
                     public void onComplete(@NonNull Task<AuthResult> task) {
                         //checking if success
                             if (task.isSuccessful()) {
-
                               Toast.makeText(Registro_activity.this, "Se ha registrado el usuario con el email: " + TextEmail.getText(), Toast.LENGTH_LONG).show();
                             } else {
                                 if (task.getException() instanceof FirebaseAuthUserCollisionException) {//si se presenta una colisión
@@ -110,17 +113,12 @@ public class Registro_activity extends AppCompatActivity implements View.OnClick
         }
 
     }
-    public boolean registrarClase(){
+    public boolean registrarClase(String email){
         boolean campos = false;
-        String claseid;
-        String nombre = TextName.getText().toString();
-        String apellido =   TextApellido.getText().toString();
-        String pais = TextPaís.getSelectedItem().toString();
-        String telefono =  TextTelefono.getText().toString();
-        if(!TextUtils.isEmpty(nombre) && !TextUtils.isEmpty(apellido) && !TextUtils.isEmpty(telefono)){
-            claseid = mDatabase.push().getKey();
-            Usuarios usu =  new Usuarios(claseid, nombre, apellido, pais, telefono);
-            mDatabase.child("Usuario").child(claseid).setValue(usu);
+        if(!TextUtils.isEmpty(email)){
+            String[] s = email.split("@");
+            Alimento a  = new Alimento("aji amarillo", 1);
+            mDatabase.child("Usuarios").child(s[0]).child("ListaCompra").child("falsi").setValue("-1");
             campos = true;
         }
         return campos;
@@ -134,4 +132,10 @@ public class Registro_activity extends AppCompatActivity implements View.OnClick
         //intent.putExtra(EXTRA_MESSAGE, message);
         startActivity(intent);
     }
+
+    public void onClickInicioSesion(View view){
+        startActivity(new Intent(this, InicioSesion_activity.class));
+        overridePendingTransition(R.anim.fade, R.anim.hold);
+    }
+
 }
