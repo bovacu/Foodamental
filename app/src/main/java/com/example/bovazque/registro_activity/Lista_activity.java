@@ -4,6 +4,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.ViewGroup.LayoutParams;
 import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.ScrollView;
@@ -41,17 +42,21 @@ public class Lista_activity extends AppCompatActivity implements AnadirAlimentoD
             for(Object key : this.lista.getElementos().keySet()){
                 LinearLayout myLinearLayout = new LinearLayout(this);
                 myLinearLayout.setOrientation(LinearLayout.HORIZONTAL);
-
                 String nombre = (String) key;
                 Button button = new Button(this);
+                LinearLayout.LayoutParams eqparams = new LinearLayout.LayoutParams(LayoutParams.MATCH_PARENT, LayoutParams.WRAP_CONTENT);
+                button.setLayoutParams(eqparams);
                 button.setOnLongClickListener(new View.OnLongClickListener() {
                     public boolean onLongClick(View v) {
-
-                        ViewGroup parentView = (ViewGroup) v.getParent();
+                        ViewGroup parentButton = (ViewGroup) v.getParent();
+                        ViewGroup parentLinearLayout = (ViewGroup) parentButton.getParent();
                         Button b = (Button) v;
-                        parentView.removeView(v);
-                        System.out.println(b.getText().toString());
                         lista.eliminarElemento(b.getText().toString());
+                        parentLinearLayout.removeView(parentButton);
+
+                        //parentView.removeView(v);
+                        //System.out.println(b.getText().toString());
+
                         return true;
                     }
                 });
