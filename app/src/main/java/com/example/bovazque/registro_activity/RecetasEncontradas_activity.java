@@ -94,13 +94,15 @@ public class RecetasEncontradas_activity extends AppCompatActivity {
             for (DataSnapshot receta : dataSnapshot.getChildren()) {
                 DataSnapshot cat = receta.child("Categoria");
 
-                String[] categorias = ((String)cat.getValue()).split(",");
+                if(cat.getValue() != null){
+                    String[] categorias = ((String)cat.getValue()).split(",");
 
-                for(String c : categorias){
-                    System.out.println(c + " ----> " + categoria);
-                    if(c.toLowerCase().replaceAll("\\s+", "").equals(categoria)) {
-                        if(!yaEnLosResultados(recetas_listView, receta.getKey())){
-                            this.anadirIngredienteALaLista(receta.getKey());
+                    for(String c : categorias){
+                        System.out.println(c + " ----> " + categoria);
+                        if(c.toLowerCase().replaceAll("\\s+", "").equals(categoria)) {
+                            if(!yaEnLosResultados(recetas_listView, receta.getKey())){
+                                this.anadirIngredienteALaLista(receta.getKey());
+                            }
                         }
                     }
                 }
