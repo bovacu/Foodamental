@@ -41,7 +41,9 @@ tools:context=".Registro_activity">
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/editTextLastName"
-        app:layout_constraintVertical_bias="0.073" />
+        app:layout_constraintVertical_bias="0.073"
+
+        />
 
     <EditText
         android:id="@+id/editTextName"
@@ -62,7 +64,8 @@ tools:context=".Registro_activity">
         app:layout_constraintHorizontal_bias="0.529"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.209" />
+        app:layout_constraintVertical_bias="0.209"
+        android:fontFamily="@font/helveticaneuelight"/>
 
     <EditText
         android:id="@+id/editTextLastName"
@@ -81,7 +84,7 @@ tools:context=".Registro_activity">
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.529"
-
+        android:fontFamily="@font/helveticaneuelight"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/editTextName"
         app:layout_constraintVertical_bias="0.07" />
@@ -105,7 +108,8 @@ tools:context=".Registro_activity">
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/TextEmail"
-        app:layout_constraintVertical_bias="0.053" />
+        app:layout_constraintVertical_bias="0.053"
+        android:fontFamily="@font/helveticaneuelight"/>
 
     <EditText
         android:id="@+id/TextEmail"
@@ -121,6 +125,7 @@ tools:context=".Registro_activity">
         android:ems="10"
         android:gravity="center"
         android:hint="@string/correo_electronico"
+        android:fontFamily="@font/helveticaneuelight"
         android:inputType="textEmailAddress"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -153,12 +158,6 @@ tools:context=".Registro_activity">
 
     <ImageButton
         android:id="@+id/buttonIni"
-        android:onClick="onClickInicioSesion"
-        app:srcCompat="@drawable/registro"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
         android:layout_width="361dp"
         android:layout_height="52dp"
         android:layout_marginStart="8dp"
@@ -166,10 +165,16 @@ tools:context=".Registro_activity">
         android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
         android:layout_marginRight="8dp"
+        android:background="#FCFCFC"
+        android:onClick="onClickInicioSesion"
         android:scaleType="fitCenter"
-        app:layout_constraintVertical_bias="0.074"
+        app:layout_constraintBottom_toBottomOf="@+id/linearLayout2"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.529"
-        />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/linearLayout2"
+        app:layout_constraintVertical_bias="0.074"
+        app:srcCompat="@drawable/registro" />
 
 
 </android.support.constraint.ConstraintLayout>

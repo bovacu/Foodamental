@@ -41,7 +41,8 @@
         app:layout_constraintHorizontal_bias="0.529"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/editTextEmail"
-        app:layout_constraintVertical_bias="0.053" />
+        app:layout_constraintVertical_bias="0.053"
+        android:fontFamily="@font/helveticaneuelight"/>
 
     <EditText
         android:id="@+id/editTextEmail"
@@ -56,6 +57,7 @@
         android:background="@drawable/round_edittext"
         android:gravity="center"
         android:ems="10"
+        android:fontFamily="@font/helveticaneuelight"
         android:hint="@string/correo_electronico"
         android:inputType="textEmailAddress"
         app:layout_constraintBottom_toBottomOf="parent"

@@ -13,7 +13,10 @@ public class Principal_activity extends AppCompatActivity {
         setContentView(R.layout.activity_principal_activity);
     }
 
-
+    public void goToMaps(View view) {
+        Intent intencion = new Intent(getApplication(), MapsActivity.class);
+        startActivity(intencion);
+    }
     public void goToRecetas(View view) {
         Intent intencion = new Intent(getApplication(), TipoBusquedaReceta.class);
         startActivity(intencion);

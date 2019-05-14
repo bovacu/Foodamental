@@ -43,6 +43,7 @@ public class Registro_activity extends AppCompatActivity implements View.OnClick
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+ //       Spinner sp = findViewById(R.id.spinCountry);
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_registro_activity);
 
