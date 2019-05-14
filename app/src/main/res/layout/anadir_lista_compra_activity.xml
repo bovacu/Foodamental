@@ -11,13 +11,13 @@
         android:hint="Nombre alimento"
         android:inputType="" />
 
-    <EditText
+    <!--<EditText
         android:id="@+id/cantidad"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:digits="0123456789."
         android:inputType="numberDecimal"
         android:hint="Cantidad"
-        android:layout_below="@+id/nombreAli" />
+        android:layout_below="@+id/nombreAli" />-->
 
 </RelativeLayout>
