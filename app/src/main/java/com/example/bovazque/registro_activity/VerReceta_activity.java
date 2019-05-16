@@ -1,5 +1,6 @@
 package com.example.bovazque.registro_activity;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -77,6 +78,12 @@ public class VerReceta_activity extends AppCompatActivity {
         } else {
             Toast.makeText(this, "El alimento no puede estar vacio", Toast.LENGTH_SHORT).show();
         }
+    }
+    public void onClickPasos(View view){
+        Intent intencion = new Intent(VerReceta_activity.this, PlayReceta.class);
+        intencion.putExtra("nombreReceta", getIntent().getStringExtra("nombreReceta"));
+        intencion.putExtra("numero", "0");
+        startActivity(intencion);
     }
 
 

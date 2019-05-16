@@ -39,7 +39,7 @@
         <activity android:name=".RecetasEncontradas_activity" />
         <activity android:name=".RecetasPorCategoria" />
         <activity android:name=".Principal_activity" />
-        <activity android:name=".Inicio_activity" />
+        <activity android:name=".PlayReceta" />
         <activity android:name=".Inicio_App_activity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

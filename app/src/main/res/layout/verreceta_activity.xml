@@ -67,6 +67,7 @@
                 android:id="@+id/iniciar_BT"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:onClick="onClickPasos"
                 android:text="Iniciar" />
 
 
