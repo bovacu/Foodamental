@@ -6,6 +6,7 @@ import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.ImageView;
 import android.widget.ListView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.firebase.database.DataSnapshot;
@@ -44,9 +45,15 @@ public class VerReceta_activity extends AppCompatActivity {
                 listView.setAdapter(adapter);
 
                 DataSnapshot ingredientesReceta = dataSnapshot.child(getIntent().getStringExtra("nombreReceta")).child("Ingredientes");
+                DataSnapshot tiempo = dataSnapshot.child(getIntent().getStringExtra("nombreReceta")).child("Tiempo");
 
                 for (DataSnapshot ingrediente : ingredientesReceta.getChildren()) {
                     anadirIngredienteALaLista(ingrediente.getKey() + " : " + ingrediente.getValue());
+                }
+
+                if(tiempo.getValue() != null) {
+                    TextView tv = findViewById(R.id.tiempo_tv);
+                    tv.setText(tiempo.getValue().toString());
                 }
 
                 ImageView imagen = findViewById(R.id.imagenReceta);
@@ -62,10 +69,19 @@ public class VerReceta_activity extends AppCompatActivity {
         });
     }
 
-    private int getImagenReceta(String nombreReceta){
+    private int getImagenReceta(String nombreReceta) {
         nombreReceta = nombreReceta.toLowerCase().replaceAll("\\s+", "").trim();
         switch(nombreReceta){
             case "arrozalacubana" : return R.drawable.arrozalacubana;
+            case "arrozconpollo" : return R.drawable.arrozconpollo;
+            case "caipiroshkademaracuya" : return R.drawable.caipiroshkademaracuya;
+            case "esqueixadadebacalao" : return R.drawable.esqueixadadebacalao;
+            case "fresasconnata" : return R.drawable.fresasconnata;
+            case "garbanzosconverduras" : return R.drawable.garbanzosconverduras;
+            case "huevocate" : return R.drawable.huevocate;
+            case "lubinaalhorno" : return R.drawable.lubinaalhorno;
+            case "medialunasconquesoysetas" : return R.drawable.medialunasconquesoysetas;
+            case "tartadequeso" : return R.drawable.tartadequeso;
             default : return -1;
         }
     }

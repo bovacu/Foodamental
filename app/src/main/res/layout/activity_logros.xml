@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Logros"
+    android:background="@drawable/fondo_inicial">
+
+    <ScrollView
+        android:layout_width="323dp"
+        android:layout_height="645dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginBottom="8dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:id="@+id/imageView8"
+                    android:layout_width="170dp"
+                    android:layout_height="153dp"
+                    android:layout_weight="1"
+                    app:srcCompat="@drawable/logro_arroz" />
+
+                <ImageView
+                    android:id="@+id/imageView7"
+                    android:layout_width="170dp"
+                    android:layout_height="153dp"
+                    android:layout_weight="1"
+                    app:srcCompat="@drawable/logro_carnes" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:id="@+id/imageView9"
+                    android:layout_width="170dp"
+                    android:layout_height="153dp"
+                    android:layout_weight="1"
+                    app:srcCompat="@drawable/logro_chef" />
+
+                <ImageView
+                    android:id="@+id/imageView10"
+                    android:layout_width="170dp"
+                    android:layout_height="153dp"
+                    android:layout_weight="1"
+                    app:srcCompat="@drawable/logro_cocinillas" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:id="@+id/imageView11"
+                    android:layout_width="170dp"
+                    android:layout_height="153dp"
+                    android:layout_weight="1"
+                    app:srcCompat="@drawable/logro_favoritos" />
+
+                <ImageView
+                    android:id="@+id/imageView12"
+                    android:layout_width="170dp"
+                    android:layout_height="153dp"
+                    android:layout_weight="1"
+                    app:srcCompat="@drawable/logro_foodmania" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:id="@+id/imageView13"
+                    android:layout_width="170dp"
+                    android:layout_height="153dp"
+                    android:layout_weight="1"
+                    app:srcCompat="@drawable/logro_galletas" />
+
+                <ImageView
+                    android:id="@+id/imageView14"
+                    android:layout_width="170dp"
+                    android:layout_height="153dp"
+                    android:layout_weight="1"
+                    app:srcCompat="@drawable/logro_novato" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:id="@+id/imageView15"
+                    android:layout_width="170dp"
+                    android:layout_height="153dp"
+                    android:layout_weight="1"
+                    app:srcCompat="@drawable/logro_pasta" />
+
+                <ImageView
+                    android:id="@+id/imageView16"
+                    android:layout_width="170dp"
+                    android:layout_height="153dp"
+                    android:layout_weight="1"
+                    app:srcCompat="@drawable/logro_pescado" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:id="@+id/imageView17"
+                    android:layout_width="170dp"
+                    android:layout_height="153dp"
+                    android:layout_weight="1"
+                    app:srcCompat="@drawable/logro_picfood" />
+
+                <ImageView
+                    android:id="@+id/imageView18"
+                    android:layout_width="170dp"
+                    android:layout_height="153dp"
+                    android:layout_weight="1"
+                    app:srcCompat="@drawable/logro_verduras" />
+            </LinearLayout>
+
+        </LinearLayout>
+    </ScrollView>
+
+</android.support.constraint.ConstraintLayout>

@@ -19,8 +19,18 @@ public class Principal_activity extends AppCompatActivity {
         startActivity(intencion);
     }
 
+    public void goToMaps(View view) {
+        Intent intencion = new Intent(getApplication(), MapsActivity.class);
+        startActivity(intencion);
+    }
+
     public void goToListaCompra(View view) {
         Intent intencion = new Intent(this, Lista_activity.class);
+        startActivity(intencion);
+    }
+
+    public void goToListaLogros(View view) {
+        Intent intencion = new Intent(this, Logros.class);
         startActivity(intencion);
     }
 

@@ -4,12 +4,13 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".TipoBusquedaReceta">
+    tools:context=".TipoBusquedaReceta"
+    android:background="@drawable/fondo_inicial">
 
     <ImageView
         android:id="@+id/imageView2"
-        android:layout_width="183dp"
-        android:layout_height="138dp"
+        android:layout_width="334dp"
+        android:layout_height="198dp"
         android:layout_marginStart="8dp"
         android:layout_marginLeft="8dp"
         android:layout_marginTop="8dp"
@@ -20,12 +21,12 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.041"
-        app:srcCompat="@android:drawable/star_big_on" />
+        app:layout_constraintVertical_bias="0.046"
+        app:srcCompat="@drawable/logotipo" />
 
     <Button
         android:id="@+id/ingredientes_btn"
-        android:layout_width="wrap_content"
+        android:layout_width="271dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
         android:layout_marginLeft="8dp"
@@ -39,12 +40,13 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
+        android:background="#F9DEBA"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.392" />
+        app:layout_constraintVertical_bias="0.545" />
 
     <Button
         android:id="@+id/categoria_btn"
-        android:layout_width="wrap_content"
+        android:layout_width="271dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
         android:layout_marginLeft="8dp"
@@ -56,6 +58,28 @@
         android:text="@string/por_categoria"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        android:background="#F9DEBA"
+        app:layout_constraintVertical_bias="0.668" />
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginBottom="8dp"
+        android:text="Buscar recetas:"
+        android:textSize="@dimen/fab_margin"
+        app:layout_constraintBottom_toTopOf="@+id/ingredientes_btn"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView2"
+        app:layout_constraintVertical_bias="0.904"
+        tools:text="Buscar recetas:" />
 </android.support.constraint.ConstraintLayout>
