@@ -50,6 +50,7 @@
         <activity android:name=".Registro_activity" />
         <activity android:name=".VerReceta_activity" />
         <activity android:name=".Lista_activity" />
+        <activity android:name=".PlayReceta" />
     </application>
 
 </manifest>

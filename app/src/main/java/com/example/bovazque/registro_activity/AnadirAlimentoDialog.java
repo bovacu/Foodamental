@@ -13,7 +13,7 @@ import android.widget.Toast;
 
 public class AnadirAlimentoDialog extends AppCompatDialogFragment {
     private EditText anadirAlimento;
-    private EditText cantidad;
+    //private EditText cantidad;
     private AnadirAlimentoDialogListener listener;
     @Override
     public Dialog onCreateDialog(Bundle savedInstanceState) {
@@ -32,12 +32,12 @@ public class AnadirAlimentoDialog extends AppCompatDialogFragment {
             @Override
             public void onClick(DialogInterface dialog, int which) {
                 String nombreAli = anadirAlimento.getText().toString();
-                String cant = cantidad.getText().toString();
+                //String cant = cantidad.getText().toString();
                 int ca = 0;
                 if(!nombreAli.equals("")){
-                    if(!cant.equals("")){
-                        ca = Integer.valueOf(cant);
-                    }
+                            /*if(!cant.equals("")){
+                                ca = Integer.valueOf(cant);
+                            }*/
                     listener.applyTexts(nombreAli, ca);
                 }else{
                     Toast.makeText(context, "Nombre articulo no puede estar vacío", Toast.LENGTH_SHORT).show();
@@ -47,7 +47,7 @@ public class AnadirAlimentoDialog extends AppCompatDialogFragment {
             }
         });
         anadirAlimento = view.findViewById(R.id.nombreAli);
-        cantidad = view.findViewById(R.id.cantidad);
+        //cantidad = view.findViewById(R.id.cantidad);
         return builder.create();
     }
 

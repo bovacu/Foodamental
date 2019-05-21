@@ -4,55 +4,57 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
-
-    <ImageView
-        android:id="@+id/imagenFondo"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        app:srcCompat="@color/media" />
+    android:layout_height="match_parent"
+    android:background="@drawable/fondo_inicial">
 
     <LinearLayout
         android:id="@+id/layoutGO"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="566dp"
+        android:layout_marginTop="8dp"
         android:orientation="vertical"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"></LinearLayout>
+        app:layout_constraintTop_toBottomOf="@+id/tituloText"
+        app:layout_constraintVertical_bias="0.0">
 
-    <EditText
-        android:id="@+id/editText2"
-        android:layout_width="match_parent"
-        android:layout_height="554dp"
-        android:layout_marginBottom="8dp"
-        android:ems="10"
-        android:inputType="textPersonName"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.538" />
+        <TextView
+            android:id="@+id/pasosReceta"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="#4DAFAFAF"
+            android:textSize="24sp"
+            app:fontFamily="@font/helveticaneueblack" />
+    </LinearLayout>
 
     <Button
         android:id="@+id/button"
         android:layout_width="match_parent"
         android:layout_height="87dp"
+        android:layout_marginTop="8dp"
+        android:onClick="onClickPasosmasmas"
         android:text="Siguiente Paso"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imagenFondo"
-        app:layout_constraintVertical_bias="1.0" />
+        app:layout_constraintTop_toBottomOf="@+id/layoutGO"
+        app:layout_constraintVertical_bias="0.97" />
 
     <TextView
-        android:id="@+id/textView4"
+        android:id="@+id/tituloText"
         android:layout_width="match_parent"
-        android:layout_height="176dp"
-        android:text="TextView"
-        app:layout_constraintBottom_toTopOf="@+id/imagenFondo"
+        android:layout_height="56dp"
+        android:layout_marginBottom="8dp"
+        android:background="#4D4169e1"
+        android:textSize="18sp"
+        app:fontFamily="@font/helveticaneuelight"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/imagenFondo"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.007" />
 </android.support.constraint.ConstraintLayout>
